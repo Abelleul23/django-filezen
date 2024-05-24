@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
-#'@5&-q%^o=@mb@=@e%b9yz^b#l-2)w&_s0ick#=wy3kw36$z($g'
+# '@5&-q%^o=@mb@=@e%b9yz^b#l-2)w&_s0ick#=wy3kw36$z($g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
@@ -87,7 +87,7 @@ DATABASES = {
         conn_max_age=600
     )
 }
-database_url = os.environ.get("database_url")
+database_url = os.environ.get("DATABASE_URL")
 DATABASES["default"] = dj_database_url.parse(
     "database_url")
 
