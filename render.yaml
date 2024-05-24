@@ -1,0 +1,12 @@
+services:
+  - type: web 
+    name: blog
+    buildCommand: "./build.sh"
+    env: python
+    startCommand: "gunicorn django_web_app.blog.wsgi:application"
+  - type: web
+    name: user
+    buildCommand: "./build.sh"
+    env: python
+    startCommand: "gunicorn django_web_app.user.wsgi:application"
+
