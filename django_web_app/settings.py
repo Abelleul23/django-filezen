@@ -81,12 +81,12 @@ WSGI_APPLICATION = 'django_web_app.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgres://abel:QggcRh6t2Ofh4H7zulCj9nZer7IaxVpa@dpg-cp86hme74orc73dchoa0-a.oregon-postgres.render.com/prdb1',
+        conn_max_age=600
+    )
 }
-
 database_url = os.environ.get("DATABASE_URL")
 DATABASES["default"] = dj_database_url.parse("database_url")
 
