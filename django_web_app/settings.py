@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'django_web_app.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/django_web_app',
-        conn_max_age=600
-    )
+    "default": {
+        "ENGINE": "django.db.backend.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+
 }
 database_url = os.environ.get("DATABASE_URL")
 DATABASES["default"] = dj_database_url.parse("database_url")
